@@ -39,7 +39,7 @@ Stack/urfi.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/
 Stack/urfi.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/port.h
 Stack/urfi.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/urfi.h
 Stack/urfi.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/uble.h
-Stack/urfi.obj: D:/Projects/Beacon_HTU21D/Startup/urfc.h
+Stack/urfi.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Startup/urfc.h
 Stack/urfi.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/hal_types.h
 Stack/urfi.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_rfe_ble.h
 Stack/urfi.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/../inc/hw_types.h
@@ -88,7 +88,7 @@ C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_comm
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/port.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/urfi.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/uble.h: 
-D:/Projects/Beacon_HTU21D/Startup/urfc.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Startup/urfc.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/hal_types.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_rfe_ble.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/../inc/hw_types.h: 

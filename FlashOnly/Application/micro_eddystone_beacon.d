@@ -197,7 +197,7 @@ Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/driverlib/../inc/hw_gpio.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/driverlib/aon_batmon.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/driverlib/../inc/hw_aon_batmon.h
-Application/micro_eddystone_beacon.obj: D:/Projects/Beacon_HTU21D/Startup/urfc.h
+Application/micro_eddystone_beacon.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Startup/urfc.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/hal_types.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_rfe_ble.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_cpe_ble_cte_grx.h
@@ -219,7 +219,7 @@ Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/uble.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/port.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/ugap.h
-Application/micro_eddystone_beacon.obj: D:/Projects/Beacon_HTU21D/Application/util.h
+Application/micro_eddystone_beacon.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Application/util.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Clock.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Queue.h
 Application/micro_eddystone_beacon.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Event.h
@@ -436,7 +436,7 @@ C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/driverlib/gp
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/driverlib/../inc/hw_gpio.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/driverlib/aon_batmon.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/driverlib/../inc/hw_aon_batmon.h: 
-D:/Projects/Beacon_HTU21D/Startup/urfc.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Startup/urfc.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/hal_types.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_rfe_ble.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_cpe_ble_cte_grx.h: 
@@ -458,7 +458,7 @@ C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/driverlib/rf
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/uble.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/port.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/ugap.h: 
-D:/Projects/Beacon_HTU21D/Application/util.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Application/util.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Clock.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Queue.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Event.h: 

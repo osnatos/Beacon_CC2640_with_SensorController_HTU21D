@@ -67,6 +67,7 @@
 
 #include <hal_assert.h>
 #include "micro_eddystone_beacon.h"
+//#include "stdlib.h"
 //--------------------------------------------------------------------
 // Sensor controller:
 #include <application/SensorController/scif.h>
@@ -289,7 +290,7 @@ void smallErrorHook(Error_Block *eb)
 
 /*******************************************************************************
  */
-//------------------------------------------------------------------------------
+//==============================================================================
 void processTaskAlert(void)
 {
   //----------------------------------------------------------------------------
@@ -297,20 +298,74 @@ void processTaskAlert(void)
   scifClearAlertIntSource();
   //----------------------------------------------------------------------------
   // Do SC Task processing here
+  //---
+  bool  htu21_crc_check( uint16_t value, uint8_t crc);
+  uint16 ConvertTemperature(uint16 temp);
+  uint16 ConvertHumidity(uint16 hum);
+  //---
   temperature = scifTaskData.htu21dtask.output.tmp;
   humidity = scifTaskData.htu21dtask.output.hum;
-
+  uint8 tmpCRC = scifTaskData.htu21dtask.output.tmpCRC;
+  uint8 humCRC = scifTaskData.htu21dtask.output.humCRC;
+  //---
+  if(htu21_crc_check(temperature, tmpCRC)) {
+       temperature= ConvertTemperature(temperature);
+  }
+  else temperature= 0xFF00;  // Error temperature
+  //---
+  if(htu21_crc_check(humidity, humCRC)) {
+      humidity = ConvertHumidity(humidity);
+  }
+  else humidity = 0xFF00;    // Error humidity
   //----------------------------------------------------------------------------
   // Acknowledge the ALERT event
   scifAckAlertEvents();
 
 } // processTaskAlert
-//------------------------------------------------------------------------------
+//==============================================================================
 void scTaskAlertCallback(void)
 {
     // Call process function
      processTaskAlert();
 } // scTaskAlertCallback
-//------------------------------------------------------------------------------
+//==============================================================================
+bool  htu21_crc_check( uint16_t value, uint8_t crc)
+{
+   uint32_t polynom = 0x988000; // x^8 + x^5 + x^4 + 1
+   uint32_t msb     = 0x800000;
+   uint32_t mask    = 0xFF8000;
+   uint32_t result  = (uint32_t)value<<8; // Pad with zeros as specified in spec
+
+   while( msb != 0x80 ) {
+       // Check if msb of current value is 1 and apply XOR mask
+       if( result & msb )
+           result = ((result ^ polynom) & mask) | ( result & ~mask);
+
+       // Shift by one
+       msb >>= 1;
+       mask >>= 1;
+       polynom >>=1;
+   }
+   if( result == crc ) return  true;  // CRC OK
+   else return false;  // CRC ERR
+}
+//==============================================================================
+uint16 ConvertTemperature(uint16 temp){
+    float fTemp;
+    int16_t tmp;
+    fTemp = -46.85+(175.72*((float)(temp)/65536));
+    tmp = (int)(fTemp*10+0.5);  // x10 and rounded
+    return tmp;
+}
+//==============================================================================
+uint16 ConvertHumidity(uint16 hum){
+    float fRH;
+    int16_t RH;
+    fRH = -6+(125*((float)(hum)/65536));
+    RH = (int)(fRH*10+0.5);  // x10 and rounded
+    return RH;
+}
+//==============================================================================
+
 
 

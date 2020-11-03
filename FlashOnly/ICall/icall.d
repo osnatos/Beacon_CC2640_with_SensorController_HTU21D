@@ -202,7 +202,7 @@ ICall/icall.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages
 ICall/icall.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/BIOS.h
 ICall/icall.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/package/BIOS_RtsGateProxy.h
 ICall/icall.obj: C:/ti/xdctools_3_51_03_28_core/packages/xdc/cfg/global.h
-ICall/icall.obj: D:/Projects/Beacon_HTU21D/FlashOnly/configPkg/package/cfg/app_ble_pem3.h
+ICall/icall.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/FlashOnly/configPkg/package/cfg/app_ble_pem3.h
 ICall/icall.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/heaps/HeapCallback.h
 ICall/icall.obj: C:/ti/xdctools_3_51_03_28_core/packages/xdc/runtime/Types.h
 ICall/icall.obj: C:/ti/xdctools_3_51_03_28_core/packages/xdc/runtime/IInstance.h
@@ -458,7 +458,7 @@ C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/E
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/BIOS.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/package/BIOS_RtsGateProxy.h: 
 C:/ti/xdctools_3_51_03_28_core/packages/xdc/cfg/global.h: 
-D:/Projects/Beacon_HTU21D/FlashOnly/configPkg/package/cfg/app_ble_pem3.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/FlashOnly/configPkg/package/cfg/app_ble_pem3.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/heaps/HeapCallback.h: 
 C:/ti/xdctools_3_51_03_28_core/packages/xdc/runtime/Types.h: 
 C:/ti/xdctools_3_51_03_28_core/packages/xdc/runtime/IInstance.h: 

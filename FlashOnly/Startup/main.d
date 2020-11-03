@@ -167,10 +167,10 @@ Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/ha
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/hal_types.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/../_common/cc26xx/_hal_types.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/inc/hal_defs.h
-Startup/main.obj: D:/Projects/Beacon_HTU21D/Application/micro_eddystone_beacon.h
-Startup/main.obj: D:/Projects/Beacon_HTU21D/application/SensorController/scif.h
-Startup/main.obj: D:/Projects/Beacon_HTU21D/application/SensorController/scif_framework.h
-Startup/main.obj: D:/Projects/Beacon_HTU21D/application/SensorController/scif_osal_tirtos.h
+Startup/main.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Application/micro_eddystone_beacon.h
+Startup/main.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/application/SensorController/scif.h
+Startup/main.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/application/SensorController/scif_framework.h
+Startup/main.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/application/SensorController/scif_osal_tirtos.h
 
 ../Startup/main.c: 
 C:/ti/xdctools_3_51_03_28_core/packages/xdc/runtime/Error.h: 
@@ -339,7 +339,7 @@ C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/inc/hal_asse
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/hal_types.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/../_common/cc26xx/_hal_types.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/inc/hal_defs.h: 
-D:/Projects/Beacon_HTU21D/Application/micro_eddystone_beacon.h: 
-D:/Projects/Beacon_HTU21D/application/SensorController/scif.h: 
-D:/Projects/Beacon_HTU21D/application/SensorController/scif_framework.h: 
-D:/Projects/Beacon_HTU21D/application/SensorController/scif_osal_tirtos.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Application/micro_eddystone_beacon.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/application/SensorController/scif.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/application/SensorController/scif_framework.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/application/SensorController/scif_osal_tirtos.h: 

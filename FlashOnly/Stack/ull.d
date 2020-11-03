@@ -51,7 +51,7 @@ Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/osal/
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/controller/cc26xx_r2/inc/ll.h
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/bcomdef.h
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/controller/cc26xx_r2/inc/ll_scheduler.h
-Stack/ull.obj: D:/Projects/Beacon_HTU21D/Application/util.h
+Stack/ull.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Application/util.h
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Clock.h
 Stack/ull.obj: C:/ti/xdctools_3_51_03_28_core/packages/xdc/std.h
 Stack/ull.obj: C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_16.9.11.LTS/include/stdarg.h
@@ -191,7 +191,7 @@ Stack/ull.obj: C:/ti/xdctools_3_51_03_28_core/packages/xdc/runtime/IModule.h
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Event__epilogue.h
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/port.h
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/uble.h
-Stack/ull.obj: D:/Projects/Beacon_HTU21D/Startup/urfc.h
+Stack/ull.obj: D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Startup/urfc.h
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/hal_types.h
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_rfe_ble.h
 Stack/ull.obj: C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_cpe_ble_cte_grx.h
@@ -251,7 +251,7 @@ C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/osal/src/inc/osal_ti
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/controller/cc26xx_r2/inc/ll.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/bcomdef.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/controller/cc26xx_r2/inc/ll_scheduler.h: 
-D:/Projects/Beacon_HTU21D/Application/util.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Application/util.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Clock.h: 
 C:/ti/xdctools_3_51_03_28_core/packages/xdc/std.h: 
 C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-arm_16.9.11.LTS/include/stdarg.h: 
@@ -391,7 +391,7 @@ C:/ti/xdctools_3_51_03_28_core/packages/xdc/runtime/IModule.h:
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages/ti/sysbios/knl/Event__epilogue.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/port.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/inc/uble.h: 
-D:/Projects/Beacon_HTU21D/Startup/urfc.h: 
+D:/Projects/Beacon_HTU21D/Beacon_CC2640_with_SensorController_HTU21D_Clone/Startup/urfc.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/blestack/hal/src/target/_common/hal_types.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_rfe_ble.h: 
 C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source/ti/devices/cc26x0r2/rf_patches/rf_patch_cpe_ble_cte_grx.h: 

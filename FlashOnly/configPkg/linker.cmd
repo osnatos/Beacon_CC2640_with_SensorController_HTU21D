@@ -9,8 +9,8 @@
  */
 
 
--l"D:\Projects\Beacon_HTU21D\FlashOnly\configPkg\package\cfg\app_ble_pem3.oem3"
--l"D:\Projects\Beacon_HTU21D\TOOLS\src\sysbios\rom_sysbios.aem3"
+-l"D:\Projects\Beacon_HTU21D\Beacon_CC2640_with_SensorController_HTU21D_Clone\FlashOnly\configPkg\package\cfg\app_ble_pem3.oem3"
+-l"D:\Projects\Beacon_HTU21D\Beacon_CC2640_with_SensorController_HTU21D_Clone\TOOLS\src\sysbios\rom_sysbios.aem3"
 -l"C:\ti\simplelink_cc2640r2_sdk_4_20_00_04\kernel\tirtos\packages\ti\targets\arm\rtsarm\lib\boot.aem3"
 -l"C:\ti\simplelink_cc2640r2_sdk_4_20_00_04\kernel\tirtos\packages\ti\targets\arm\rtsarm\lib\auto_init.aem3"
 -l"C:\ti\xdctools_3_51_03_28_core\packages\xdc\rov\runtime\lib\xdc.rov.runtime.aem3"
