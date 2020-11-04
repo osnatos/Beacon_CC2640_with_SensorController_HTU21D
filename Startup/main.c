@@ -308,6 +308,9 @@ void processTaskAlert(void)
   uint8 tmpCRC = scifTaskData.htu21dtask.output.tmpCRC;
   uint8 humCRC = scifTaskData.htu21dtask.output.humCRC;
   //---
+  temperature= ConvertTemperature(temperature);
+  humidity = ConvertHumidity(humidity);
+/*
   if(htu21_crc_check(temperature, tmpCRC)) {
        temperature= ConvertTemperature(temperature);
   }
@@ -317,6 +320,7 @@ void processTaskAlert(void)
       humidity = ConvertHumidity(humidity);
   }
   else humidity = 0xFF00;    // Error humidity
+*/
   //----------------------------------------------------------------------------
   // Acknowledge the ALERT event
   scifAckAlertEvents();
