@@ -5,12 +5,12 @@
   * Studio tool:
   * - <b>Project name</b>:     HTU21D
   * - <b>Project file</b>:     D:/Projects/Sensor Controller Studio/HTU21D_sensor/HTU21D_sensor.scp
-  * - <b>Code prefix</b>:      -
+  * - <b>Code prefix</b>:      HTU21D
   * - <b>Operating system</b>: TI-RTOS
   * - <b>Tool version</b>:     2.7.0.155
   * - <b>Tool patches</b>:     None
   * - <b>Target chip</b>:      CC2640R2F, package QFN48 7x7 RGZ, revision -
-  * - <b>Created</b>:          2020-11-04 14:53:36.915
+  * - <b>Created</b>:          2020-12-28 16:18:16.139
   * - <b>Computer</b>:         NATAN-MAIN
   * - <b>User</b>:             Natan
   *
@@ -77,7 +77,7 @@
   *
   * This driver setup instance has been generated for:
   * - <b>Project name</b>:     HTU21D
-  * - <b>Code prefix</b>:      -
+  * - <b>Code prefix</b>:      HTU21D
   *
   * The driver setup module contains the generated output from the Sensor Controller Studio project:
   * - Location of task control and scheduling data structures in AUX RAM
@@ -89,8 +89,8 @@
   *
   * @{
   */
-#ifndef SCIF_H
-#define SCIF_H
+#ifndef SCIF_HTU21D_H
+#define SCIF_HTU21D_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -99,75 +99,95 @@
 
 
 /// Target chip name
-#define SCIF_TARGET_CHIP_NAME_CC2640R2F
+#define SCIF_HTU21D_TARGET_CHIP_NAME_CC2640R2F
 /// Target chip package
-#define SCIF_TARGET_CHIP_PACKAGE_QFN48_7X7_RGZ
+#define SCIF_HTU21D_TARGET_CHIP_PACKAGE_QFN48_7X7_RGZ
 
 /// Number of tasks implemented by this driver
-#define SCIF_TASK_COUNT 1
+#define SCIF_HTU21D_TASK_COUNT 1
 
 /// HTU21Dtask: Task ID
-#define SCIF_HTU21DTASK_TASK_ID 0
+#define SCIF_HTU21D_HTU21DTASK_TASK_ID 0
 
 
+/// HTU21Dtask: I2C Slave address.
+#define SCIF_HTU21D_HTU21DTASK_ALS_I2C_ADDR 128
+/// HTU21Dtask: Command code: Trigger Humidity Measurement. Hold master.
+#define SCIF_HTU21D_HTU21DTASK_HUM_MEASUR_HOLD 229
+/// HTU21Dtask: Command code: Trigger Temperature Measurement. No Hold master.
+#define SCIF_HTU21D_HTU21DTASK_HUM_MEASUR_NO_HOLD 245
 /// HTU21Dtask: 
-#define SCIF_HTU21DTASK_ALS_I2C_ADDR 128
-/// HTU21Dtask: Trigger Humidity Measurement. Hold master
-#define SCIF_HTU21DTASK_HUM_MEASUR_HOLD 229
-/// HTU21Dtask: Trigger Temperature Measurement. No Hold master
-#define SCIF_HTU21DTASK_HUM_MEASUR_NO_HOLD 245
+#define SCIF_HTU21D_HTU21DTASK_POLYNOMIAL 305
+/// HTU21Dtask: Command code: Read User Register.
+#define SCIF_HTU21D_HTU21DTASK_READ_REG 231
 /// HTU21Dtask: 
-#define SCIF_HTU21DTASK_POLYNOMIAL 305
+#define SCIF_HTU21D_HTU21DTASK_RD_BUF_LEN 6
+/// HTU21Dtask: Command code: Soft Reset.
+#define SCIF_HTU21D_HTU21DTASK_SOFT_RESET 254
+/// HTU21Dtask: Command code: Trigger Temperature Measurement. Hold master.
+#define SCIF_HTU21D_HTU21DTASK_TEMP_MEASUR_HOLD 227
+/// HTU21Dtask: Command code: Trigger Temperature Measurement. No Hold master. 
+#define SCIF_HTU21D_HTU21DTASK_TEMP_MEASUR_NO_HOLD 243
 /// HTU21Dtask: 
-#define SCIF_HTU21DTASK_RD_BUF_LEN 6
-/// HTU21Dtask: Trigger Temperature Measurement. Hold master
-#define SCIF_HTU21DTASK_TEMP_MEASUR_HOLD 227
-/// HTU21Dtask: Trigger Temperature Measurement. No Hold master
-#define SCIF_HTU21DTASK_TEMP_MEASUR_NO_HOLD 243
-/// HTU21Dtask: 
-#define SCIF_HTU21DTASK_TWO_BYTE_ARREY_LEN 2
+#define SCIF_HTU21D_HTU21DTASK_TWO_BYTE_ARREY_LEN 2
+/// HTU21Dtask: Command code: Write User Register.
+#define SCIF_HTU21D_HTU21DTASK_WRITE_REG 230
 /// HTU21Dtask I/O mapping: I2C SCL
-#define SCIF_HTU21DTASK_DIO_I2C_SCL 4
+#define SCIF_HTU21D_HTU21DTASK_DIO_I2C_SCL 4
 /// HTU21Dtask I/O mapping: I2C SDA
-#define SCIF_HTU21DTASK_DIO_I2C_SDA 5
+#define SCIF_HTU21D_HTU21DTASK_DIO_I2C_SDA 5
 
 
 // All shared data structures in AUX RAM need to be packed
 #pragma pack(push, 2)
 
 
+/// HTU21Dtask: Task configuration structure
+typedef struct {
+    uint16_t UserRegData; ///< Data for write in User Register
+} SCIF_HTU21D_HTU21DTASK_CFG_T;
+
+
+/// HTU21Dtask: Task input data structure
+typedef struct {
+    uint16_t ReadRequest;  ///< Request to read the user's register.
+    uint16_t ResetRequest; ///< Soft Reset request.
+    uint16_t WriteRequest; ///< Request to write in the user's register.
+} SCIF_HTU21D_HTU21DTASK_INPUT_T;
+
+
 /// HTU21Dtask: Task output data structure
 typedef struct {
-    uint16_t hum;    ///< 
-    uint16_t humCRC; ///< 
-    uint16_t tmp;    ///< 
-    uint16_t tmpCRC; ///< 
-} SCIF_HTU21DTASK_OUTPUT_T;
+    uint16_t UserRegContent; ///< Content of the user register.
+    uint16_t hum;            ///< 
+    uint16_t tmp;            ///< 
+} SCIF_HTU21D_HTU21DTASK_OUTPUT_T;
 
 
 /// HTU21Dtask: Task state structure
 typedef struct {
-    uint16_t TwoByte[2]; ///< 
-    uint16_t humOK;      ///< 
-    uint16_t i2cStatus;  ///< I2C master status
-    uint16_t tempOK;     ///< 
-} SCIF_HTU21DTASK_STATE_T;
+    uint16_t humOK;     ///< 
+    uint16_t i2cStatus; ///< I2C master status
+    uint16_t tempOK;    ///< 
+} SCIF_HTU21D_HTU21DTASK_STATE_T;
 
 
 /// Sensor Controller task data (configuration, input buffer(s), output buffer(s) and internal state)
 typedef struct {
     struct {
-        SCIF_HTU21DTASK_OUTPUT_T output;
-        SCIF_HTU21DTASK_STATE_T state;
+        SCIF_HTU21D_HTU21DTASK_CFG_T cfg;
+        SCIF_HTU21D_HTU21DTASK_INPUT_T input;
+        SCIF_HTU21D_HTU21DTASK_OUTPUT_T output;
+        SCIF_HTU21D_HTU21DTASK_STATE_T state;
     } htu21dtask;
-} SCIF_TASK_DATA_T;
+} SCIF_HTU21D_TASK_DATA_T;
 
 /// Sensor Controller task generic control (located in AUX RAM)
-#define scifTaskData    (*((volatile SCIF_TASK_DATA_T*) 0x400E00EA))
+#define scifHtu21dTaskData    (*((volatile SCIF_HTU21D_TASK_DATA_T*) 0x400E00EA))
 
 
 // Initialized internal driver data, to be used in the call to \ref scifInit()
-extern const SCIF_DATA_T scifDriverSetup;
+extern const SCIF_DATA_T scifHtu21dDriverSetup;
 
 
 // Restore previous struct packing setting
@@ -175,17 +195,17 @@ extern const SCIF_DATA_T scifDriverSetup;
 
 
 // AUX I/O re-initialization functions
-void scifReinitTaskIo(uint32_t bvTaskIds);
+void scifHtu21dReinitTaskIo(uint32_t bvTaskIds);
 
 
 // RTC-based tick generation control
-void scifStartRtcTicks(uint32_t tickStart, uint32_t tickPeriod);
-void scifStartRtcTicksNow(uint32_t tickPeriod);
-void scifStopRtcTicks(void);
+void scifHtu21dStartRtcTicks(uint32_t tickStart, uint32_t tickPeriod);
+void scifHtu21dStartRtcTicksNow(uint32_t tickPeriod);
+void scifHtu21dStopRtcTicks(void);
 
 
 #endif
 //@}
 
 
-// Generated by NATAN-MAIN at 2020-11-04 14:53:36.915
+// Generated by NATAN-MAIN at 2020-12-28 16:18:16.139

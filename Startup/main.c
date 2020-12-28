@@ -70,7 +70,7 @@
 //#include "stdlib.h"
 //--------------------------------------------------------------------
 // Sensor controller:
-#include <application/SensorController/scif.h>
+#include <application/SensorController/scif_htu21d.h>
 #define BV(n) (1 << (n))
 /*******************************************************************************
  * MACROS
@@ -150,16 +150,16 @@ int main()
     // Initialize the Sensor Controller
     scifOsalInit();
     scifOsalRegisterTaskAlertCallback(scTaskAlertCallback);
-    scifInit(&scifDriverSetup);
+    scifInit(&scifHtu21dDriverSetup);
 
     // Set the Sensor Controller task tick interval to 1 second
     uint32_t rtc_Hz = 1;  // 1Hz RTC
-    scifStartRtcTicksNow(0x00010000 / rtc_Hz);
+    scifHtu21dStartRtcTicksNow(0x00010000 / rtc_Hz);
 
     // Configure Sensor Controller tasksSCIF_HTU21DTASK_TASK_ID
 
     // Start Sensor Controller task
-    scifStartTasksNbl(BV(SCIF_HTU21DTASK_TASK_ID));
+    scifStartTasksNbl(BV(SCIF_HTU21D_HTU21DTASK_TASK_ID));
     //------------------------------------------------------------------------------
 
   BIOS_start();     /* enable interrupts and start SYS/BIOS */
@@ -303,10 +303,10 @@ void processTaskAlert(void)
   uint16 ConvertTemperature(uint16 temp);
   uint16 ConvertHumidity(uint16 hum);
   //---
-  temperature = scifTaskData.htu21dtask.output.tmp;
-  humidity = scifTaskData.htu21dtask.output.hum;
-  uint8 tmpCRC = scifTaskData.htu21dtask.output.tmpCRC;
-  uint8 humCRC = scifTaskData.htu21dtask.output.humCRC;
+  temperature = scifHtu21dTaskData.htu21dtask.output.tmp;
+  humidity = scifHtu21dTaskData.htu21dtask.output.hum;
+ // uint8 tmpCRC = scifTaskData.htu21dtask.output.tmpCRC;
+ // uint8 humCRC = scifTaskData.htu21dtask.output.humCRC;
   //---
   temperature= ConvertTemperature(temperature);
   humidity = ConvertHumidity(humidity);
