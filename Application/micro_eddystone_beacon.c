@@ -136,7 +136,7 @@ typedef struct {
   uint8 temp[2];        // Temperature. Signed 8.8 fixed point
   uint8 advCnt[4];      // Adv count since power-up/reboot
   uint8 secCnt[4];      // Time since power-up/reboot
-                          // in 0.1 second resolution
+                        // in 0.1 second resolution
   uint8 humidity[2];    // Humidity. Signed 8.8 fixed point
 
 
@@ -172,8 +172,12 @@ Display_Handle dispHandle = NULL;
 /*********************************************************************
  * EXTERNAL VARIABLES
  */
-extern uint16 temperature;  // Natan 11-10-2020
-extern uint16 humidity;     // Natan 11-10-2020
+//extern uint16 temperature;  // Natan 11-10-2020
+//extern uint16 humidity;     // Natan 11-10-2020
+
+extern float temperature;  // Natan 11-10-2020
+extern float humidity;     // Natan 11-10-2020
+
 /*********************************************************************
  * EXTERNAL FUNCTIONS
  */
@@ -493,17 +497,27 @@ static void MicroEddystoneBeacon_updateTLM(void)
   batt = (batt * 125) >> 5; // convert V to mV
   eddystoneTLM.vBatt[0] = HI_UINT16(batt);
   eddystoneTLM.vBatt[1] = LO_UINT16(batt);
-
-  // Temperature - 19.5 (Celcius) for example
- // eddystoneTLM.temp[0] = 19;
- // eddystoneTLM.temp[1] = 256 / 2;
-
-  eddystoneTLM.temp[0] = temperature/10;
-  eddystoneTLM.temp[1] = (temperature%10)*25.6;
-
-  eddystoneTLM.humidity[0] = humidity/10;
-  eddystoneTLM.humidity[1] = (humidity%10)*25.6;
-
+  //---------------------------------------------------------------------------
+  //-- temperature
+  float fraction;
+  eddystoneTLM.temp[0] = temperature;
+  fraction = (temperature-(int)temperature);
+  eddystoneTLM.temp[1] = fraction*256;
+  if(fraction < 0) {
+      eddystoneTLM.temp[0] -= 1;
+      eddystoneTLM.temp[1] = (fraction*256)+256;
+  }
+  //---------------------------------------------------------------------------
+  //-- humidity
+  humidity= humidity -0.15*(25-temperature);  // Temperature compensation
+  eddystoneTLM.humidity[0] = humidity;
+  fraction = (humidity-(int)humidity);
+  eddystoneTLM.humidity[1] = fraction*256;
+  if(fraction < 0) {
+      eddystoneTLM.humidity[0] -= 1;
+      eddystoneTLM.humidity[1] = (fraction*256)+256;
+  }
+  //---------------------------------------------------------------------------
   // advertise packet cnt;
   eddystoneTLM.advCnt[0] = BREAK_UINT32(advCount, 3);
   eddystoneTLM.advCnt[1] = BREAK_UINT32(advCount, 2);

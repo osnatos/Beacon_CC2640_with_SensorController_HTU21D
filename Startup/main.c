@@ -91,8 +91,11 @@
 /*******************************************************************************
  * GLOBAL VARIABLES
  */
- uint16 temperature;
- uint16 humidity;
+// uint16 temperature;
+// uint16 humidity;
+ float temperature;
+ float humidity;
+
 
 /*******************************************************************************
  * EXTERNS
@@ -300,27 +303,14 @@ void processTaskAlert(void)
   // Do SC Task processing here
   //---
   bool  htu21_crc_check( uint16_t value, uint8_t crc);
-  uint16 ConvertTemperature(uint16 temp);
-  uint16 ConvertHumidity(uint16 hum);
+  float ConvertTemperature(float temp);
+  float ConvertHumidity(float hum);
   //---
   temperature = scifHtu21dTaskData.htu21dtask.output.tmp;
   humidity = scifHtu21dTaskData.htu21dtask.output.hum;
- // uint8 tmpCRC = scifTaskData.htu21dtask.output.tmpCRC;
- // uint8 humCRC = scifTaskData.htu21dtask.output.humCRC;
   //---
   temperature= ConvertTemperature(temperature);
   humidity = ConvertHumidity(humidity);
-/*
-  if(htu21_crc_check(temperature, tmpCRC)) {
-       temperature= ConvertTemperature(temperature);
-  }
-  else temperature= 0xFF00;  // Error temperature
-  //---
-  if(htu21_crc_check(humidity, humCRC)) {
-      humidity = ConvertHumidity(humidity);
-  }
-  else humidity = 0xFF00;    // Error humidity
-*/
   //----------------------------------------------------------------------------
   // Acknowledge the ALERT event
   scifAckAlertEvents();
@@ -354,20 +344,16 @@ bool  htu21_crc_check( uint16_t value, uint8_t crc)
    else return false;  // CRC ERR
 }
 //==============================================================================
-uint16 ConvertTemperature(uint16 temp){
+float ConvertTemperature(float temp){
     float fTemp;
-    int16_t tmp;
-    fTemp = -46.85+(175.72*((float)(temp)/65536));
-    tmp = (int)(fTemp*10+0.5);  // x10 and rounded
-    return tmp;
+    fTemp = -46.85+(175.72*temp/65536);
+    return fTemp;
 }
 //==============================================================================
-uint16 ConvertHumidity(uint16 hum){
+float ConvertHumidity(float hum){
     float fRH;
-    int16_t RH;
-    fRH = -6+(125*((float)(hum)/65536));
-    RH = (int)(fRH*10+0.5);  // x10 and rounded
-    return RH;
+    fRH = -6+(125*hum/65536);
+    return fRH;
 }
 //==============================================================================
 
