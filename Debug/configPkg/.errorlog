@@ -1,2 +1,0 @@
-js: "./config.bld", line 12: Error: Can't find the target named 'ti.targets.arm.elf.M3_big_endian' along the path 'C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/source;C:/ti/simplelink_cc2640r2_sdk_4_20_00_04/kernel/tirtos/packages;C:/ti/xdctools_3_51_03_28_core/packages;..;': please check the spelling of the target's name and that it exists along this path.
-xdctools_3_51_03_28_core\gmake.exe: *** No rule to make target '.configuro'.  Stop.
